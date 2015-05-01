@@ -1,0 +1,27 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - CocoaSecurity (1.2.4)
+  - MBProgressHUD (0.9.1)
+  - SVProgressHUD (1.1.3)
+  - Toast (2.4)
+  - ZXingObjC (3.1.0):
+    - ZXingObjC/All (= 3.1.0)
+  - ZXingObjC/All (3.1.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.3.3)
+  - CocoaSecurity
+  - MBProgressHUD (~> 0.8)
+  - SVProgressHUD
+  - Toast (~> 2.4)
+  - ZXingObjC
+
+SPEC CHECKSUMS:
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  CocoaSecurity: d288a6f87e0f363823d2cb83e753814a6944f71a
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
+  ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
+
+COCOAPODS: 0.36.3
