@@ -23,5 +23,6 @@
 
 - (IBAction) checkboxClick:(id)sender;
 - (IBAction) goBtn:(id)sender;
+- (IBAction) goBack:(id)sender;
 
 @end

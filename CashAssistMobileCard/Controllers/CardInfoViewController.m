@@ -79,6 +79,10 @@
     }
 }
 
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [ touches anyObject ];
     CGPoint location = [ touch locationInView: self.view ];

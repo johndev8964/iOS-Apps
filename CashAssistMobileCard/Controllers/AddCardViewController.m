@@ -61,6 +61,10 @@
     }
 }
 
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction) qrCodeScan:(id)sender {
     //[SVProgressHUD showWithStatus:@"Please wait..." maskType:SVProgressHUDMaskTypeClear];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

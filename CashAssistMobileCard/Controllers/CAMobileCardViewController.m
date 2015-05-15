@@ -74,6 +74,10 @@
     [payCardStatus setText:status];
 }
 
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void) processPayWithCards:(NSString *)result {
     payCardCompany = [Global httpResponseParser:@"1" result:result];
     payCardClientID = [Global httpResponseParser:@"2" result:result];

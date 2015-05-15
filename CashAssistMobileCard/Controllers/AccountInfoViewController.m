@@ -67,6 +67,10 @@
     [signoutConfirmAlertView show];
 }
 
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:

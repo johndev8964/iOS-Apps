@@ -97,6 +97,10 @@
     
     return (vErrorCnt == 0);
 }
+
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 /*
 #pragma mark - Navigation
 

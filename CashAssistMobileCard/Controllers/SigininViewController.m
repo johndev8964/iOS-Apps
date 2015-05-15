@@ -173,6 +173,10 @@
     [emailText resignFirstResponder];
     [passwordText resignFirstResponder];
 }
+
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 /*
 #pragma mark - Navigation
 

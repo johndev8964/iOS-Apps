@@ -181,4 +181,9 @@
     [passwordText resignFirstResponder];
     [confirmationText resignFirstResponder];
 }
+
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

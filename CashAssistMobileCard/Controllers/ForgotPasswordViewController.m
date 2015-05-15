@@ -75,6 +75,9 @@
     }];
 }
 
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (Boolean) checkValidation
 {

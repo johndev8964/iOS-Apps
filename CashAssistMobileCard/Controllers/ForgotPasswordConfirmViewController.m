@@ -43,6 +43,10 @@
     [Global pageFlip:self to:siginViewCtrl];
 }
 
+- (IBAction) goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 
