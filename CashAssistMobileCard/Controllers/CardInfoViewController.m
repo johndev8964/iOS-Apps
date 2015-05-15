@@ -288,8 +288,9 @@
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TransactionsViewController *transactionViewCtrl = [mainStoryboard instantiateViewControllerWithIdentifier:@"TransactionView"];
+    transactionViewCtrl.points = pointsLabel.text;
+    transactionViewCtrl.money = moneyLabel.text;
     [Global pageFlip:self to:transactionViewCtrl];
-    [transactionViewCtrl showPointsMoney:pointsLabel.text money:moneyLabel.text];
 }
 
 - (IBAction) showTransactions:(id)sender {

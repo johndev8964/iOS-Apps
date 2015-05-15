@@ -99,7 +99,6 @@
             }
         }
         
-        
         if(g_Global.payCardsArray.count == 0) {
             [self showPayCardStatus:@"Error : No registered cards from this company in the you..."];
         }

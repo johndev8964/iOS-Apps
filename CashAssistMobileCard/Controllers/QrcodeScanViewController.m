@@ -253,6 +253,7 @@
                                     [self performSelector:@selector(goMobileCard)];
                                     break;
                                 case RT10_GETCOMPANYMODIFIDEDNO:
+                                    [self addCompanyData:result];
                                     [self performSelector:@selector(goMobileCard)];
                                     break;
                                 default:

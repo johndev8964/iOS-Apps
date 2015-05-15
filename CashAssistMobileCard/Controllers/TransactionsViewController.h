@@ -16,7 +16,9 @@
 @property(nonatomic, retain) IBOutlet UIButton *menuBtn;
 @property(nonatomic, retain) IBOutlet UIView  *menuView;
 
-- (void) showPointsMoney:(NSString *) points money:(NSString *) money;
+@property(nonatomic, retain) NSString *points;
+@property(nonatomic, retain) NSString *money;
+
 - (IBAction) goAddCard:(id)sender;
 - (IBAction) goAccountInfo:(id)sender;
 - (IBAction) goAbout:(id)sender;

@@ -25,6 +25,8 @@
 @synthesize menuBtn;
 @synthesize menuView;
 @synthesize descView;
+@synthesize points;
+@synthesize money;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,8 +41,9 @@
     menuBtn.layer.borderWidth = 1;
     menuBtn.layer.borderColor = [[UIColor colorWithHexString:@"#d79834"] CGColor];
     
-    
     [menuView setHidden:YES];
+    pointsLabel.text = points;
+    moneyLabel.text = money;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,11 +66,6 @@
     }
 }
 
-- (void) showPointsMoney:(NSString *)points money:(NSString *)money {
-    [pointsLabel setText:points];
-    [moneyLabel setText:money];
-}
-
 - (IBAction) goAddCard:(id)sender {
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     AddCardViewController *addCardViewCtrl = [mainStoryboard instantiateViewControllerWithIdentifier:@"AddCardView"];
@@ -82,7 +80,7 @@
 
 - (IBAction) goAbout:(id)sender {
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    AboutViewController *aboutViewCtrl = [mainStoryboard instantiateViewControllerWithIdentifier:@"AboutInfoView"];
+    AboutViewController *aboutViewCtrl = [mainStoryboard instantiateViewControllerWithIdentifier:@"AboutView"];
     [Global pageFlip:self to:aboutViewCtrl];
 }
 
@@ -92,6 +90,8 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"TransactionsTableViewCell" owner:self options:nil] objectAtIndex:0];
     }
+    
+    [cell showCell:[g_Global.transactionsArray objectAtIndex:indexPath.row]];
     
     return cell;
 }
@@ -103,7 +103,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return [g_Global.transactionsArray count];
 }
 
 - (CGFloat) tableView : (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath {

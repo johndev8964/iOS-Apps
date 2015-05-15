@@ -35,7 +35,6 @@
         }
     }
     
-    ////UIImage* image = [UIImage imageWithData:companyRecord.logo];logoImageView.image = image;
     [logoImageView setImage:[UIImage imageWithData:companyRecord.logo]];
     [companyLabel setText:companyRecord.name];
 }
