@@ -12,6 +12,7 @@
 #import "Global.h"
 #import "Constants.h"
 #import "APIService.h"
+#import "NSData+Base64.h"
 #import <CocoaSecurity/CocoaSecurity.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -295,8 +296,8 @@
 //    [[Global httpResponseParser:@"logo" result:result] writeToFile:[homeDir stringByAppendingPathComponent:@"test.png"] atomically:YES encoding:NSUTF8StringEncoding error:&error];
     
     NSString *base64String = [Global httpResponseParser:@"logo" result:result];
-    NSData *logoImage = [[NSData alloc] initWithBase64EncodedString:base64String options:0];
-    companyRecord.logo = logoImage;
+    companyRecord.logo = base64String;
+
     
     //[companyRecord.logo writeToFile:[homeDir stringByAppendingPathComponent:@"test1.png"] atomically:YES];
     

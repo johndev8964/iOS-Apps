@@ -20,13 +20,13 @@
 @synthesize companysArray;
 
 + (BOOL)createTable:(sqlite3 *)dbHandler {
-    NSString* strQuery = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@ INTEGER PRIMARY KEY AUTOINCREMENT, %@ INTEGER NOT NULL, %@ VARCHAR(%d) NOT NULL,  %@ VARCHAR(%d) NOT NULL,  %@ BLOB NOT NULL,  %@ VARCHAR(%d) NOT NULL)",
+    NSString* strQuery = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@ INTEGER PRIMARY KEY AUTOINCREMENT, %@ INTEGER NOT NULL, %@ VARCHAR(%d) NOT NULL,  %@ VARCHAR(%d) NOT NULL,  %@ VARCHAR(%d) NOT NULL,  %@ VARCHAR(%d) NOT NULL)",
                           TABLE_COMPANYS,
                           FIELD_RECORDID,
                           FIELD_MODIFIEDNO,
                           FIELD_COMPANY, 255,
                           FIELD_NAME,     255,
-                          FIELD_LOGO,
+                          FIELD_LOGO,     4000,
                           FIELD_COMPANYID,    255
                           ];
     if (sqlite3_exec(dbHandler, [strQuery UTF8String], NULL, NULL, NULL) != SQLITE_OK)
@@ -53,14 +53,13 @@
                 record.modifiedno   = 0;
                 record.company      = @"";
                 record.name         = @"";
-                record.logo         = 0x00;
+                record.logo         = @"";
                 record.companyid    = @"";
                 
                 char *company = (char*)sqlite3_column_text(stmt, 2);
                 char *name = (char*)sqlite3_column_text(stmt, 3);
                 char *companyid = (char*)sqlite3_column_text(stmt, 5);
-                
-                Byte *logo =(Byte *) sqlite3_column_blob(stmt, 4);
+                char *logo =(char *) sqlite3_column_blob(stmt, 4);
                 
                 record.recordid = sqlite3_column_int(stmt, 0);
                 
@@ -74,7 +73,7 @@
                     record.companyid = [NSString stringWithUTF8String:companyid];
                 
                 if (logo != nil)
-                    record.logo = [[NSData alloc] initWithBytes:logo length:sqlite3_column_bytes(stmt, 4)];
+                    record.logo = [NSString stringWithUTF8String:logo];
                 
                 [companysArray addObject:record];
             }

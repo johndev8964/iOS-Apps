@@ -8,6 +8,7 @@
 
 #import "CardsTableViewCell.h"
 #import "Global.h"
+#import "NSData+Base64.h"
 
 @implementation CardsTableViewCell
 
@@ -34,8 +35,8 @@
             companyRecord = _company;
         }
     }
-    
-    [logoImageView setImage:[UIImage imageWithData:companyRecord.logo]];
+    NSData *imageData = [NSData dataFromBase64String:companyRecord.logo];
+    [logoImageView setImage:[UIImage imageWithData:imageData]];
     [companyLabel setText:companyRecord.name];
 }
 

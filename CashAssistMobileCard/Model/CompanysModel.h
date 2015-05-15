@@ -23,16 +23,16 @@
     int modifiedno;
     NSString *company;
     NSString *name;
-    NSData   *logo;
+    NSString *logo;
     NSString *companyid;
 }
 
 @property (nonatomic)         int       recordid;
 @property (nonatomic)         int       modifiedno;
-@property (nonatomic, retain) NSString* company;
-@property (nonatomic, retain) NSString* name;
-@property (nonatomic, retain) NSData  * logo;
-@property (nonatomic, retain) NSString* companyid;
+@property (nonatomic, retain) NSString  *company;
+@property (nonatomic, retain) NSString  *name;
+@property (nonatomic, retain) NSString  *logo;
+@property (nonatomic, retain) NSString  *companyid;
 
 
 @end

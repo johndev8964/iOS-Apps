@@ -270,7 +270,7 @@
                     switch ([[Global httpResponseParser:C_REQUEST_TYPE result:result] intValue]) {
                         case RT4_GETCOMPANYDATA:
                             _companyRecord.name = [Global httpResponseParser:@"name" result:result];
-                            _companyRecord.logo = [[Global httpResponseParser:@"logo" result:result] dataUsingEncoding:NSUTF8StringEncoding];
+                            _companyRecord.logo = [Global httpResponseParser:@"logo" result:result];
                             _companyRecord.companyid = [Global httpResponseParser:@"companyid" result:result];
                             _companyRecord.modifiedno = [[Global httpResponseParser:@"mno" result:result] intValue];
                             _companyRecord.company = [Global httpResponseParser:@"company" result:result];

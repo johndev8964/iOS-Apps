@@ -54,6 +54,7 @@
 		A7B2E54E1AE5E02600F48EA0 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B2E54D1AE5E02600F48EA0 /* Transaction.m */; };
 		A7CAA7441AD6CCAF000A66BD /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = A7CAA7421AD6CCAF000A66BD /* checked.png */; };
 		A7CAA7451AD6CCAF000A66BD /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = A7CAA7431AD6CCAF000A66BD /* unchecked.png */; };
+		A7EDDC941B06469500411BB0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EDDC931B06469500411BB0 /* NSData+Base64.m */; };
 		A7FE1C481ADB5D5D00ACB018 /* QrcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FE1C471ADB5D5D00ACB018 /* QrcodeScanViewController.m */; };
 		FD9D673DC7FDFDDE65D6B144 /* libPods-CashAssistMobileCard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5610A4C7BFB9680A738AAAC3 /* libPods-CashAssistMobileCard.a */; };
 /* End PBXBuildFile section */
@@ -149,6 +150,8 @@
 		A7B2E54D1AE5E02600F48EA0 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		A7CAA7421AD6CCAF000A66BD /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		A7CAA7431AD6CCAF000A66BD /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		A7EDDC921B06469500411BB0 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		A7EDDC931B06469500411BB0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		A7FE1C461ADB5D5D00ACB018 /* QrcodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QrcodeScanViewController.h; sourceTree = "<group>"; };
 		A7FE1C471ADB5D5D00ACB018 /* QrcodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QrcodeScanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +246,8 @@
 		A72744801AD770FC00D5CD4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A7EDDC921B06469500411BB0 /* NSData+Base64.h */,
+				A7EDDC931B06469500411BB0 /* NSData+Base64.m */,
 				A710974F1ADC3B7300805AF3 /* DBHandler.h */,
 				A71097501ADC3B7300805AF3 /* DBHandler.m */,
 				A71097521ADC3B8500805AF3 /* CardsModel.h */,
@@ -524,6 +529,7 @@
 				A727447C1AD7703000D5CD4B /* VerificationEmailViewController.m in Sources */,
 				A72744771AD7703000D5CD4B /* CreateAccountViewController.m in Sources */,
 				A72744841AD7751600D5CD4B /* APIService.m in Sources */,
+				A7EDDC941B06469500411BB0 /* NSData+Base64.m in Sources */,
 				A72744761AD7703000D5CD4B /* CardInfoViewController.m in Sources */,
 				A74C20861AD858CE00B72FF0 /* ConfirmEmailViewController.m in Sources */,
 				A72744721AD7703000D5CD4B /* AboutViewController.m in Sources */,
