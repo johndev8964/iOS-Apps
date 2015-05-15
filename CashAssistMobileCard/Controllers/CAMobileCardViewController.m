@@ -67,6 +67,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [Global initDB];
     [payCardStatus setHidden:YES];
+    [cardsList reloadData];
 }
 
 - (void) showPayCardStatus:(NSString *) status {

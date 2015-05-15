@@ -318,9 +318,11 @@
 }
 
 - (IBAction) goDeleteCard:(id)sender {
-    for(CardRecord *_card in g_CardsModel.cardsArray) {
+    for (int i = 0; i < [g_CardsModel.cardsArray count]; i++) {
+        CardRecord *_card = [g_CardsModel.cardsArray objectAtIndex:i];
         if ([mCardNumber isEqualToString:_card.number]) {
             [g_CardsModel.cardsArray removeObject:_card];
+            i--;
         }
     }
     

@@ -54,9 +54,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return toInterfaceOrientation == UIInterfaceOrientationPortrait;
@@ -134,6 +131,14 @@
     
     [self.capture stop];
     
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        //[self.capture start];
+        [self getQRCode:result];
+    });
+}
+
+- (void) getQRCode : (ZXResult *) result {
     NSString *qrCode = result.text;
     
     if ([qrCode isEqualToString: @""]) {
@@ -158,7 +163,7 @@
         
         if (operationType != OT0_UNKNOWN && operationType != OT1_REGISTERCARD && operationType != OT2_PAYWITHCARD) {
             [Global showAlert:@"Error" description:[NSString stringWithFormat:@"This QR Code is for other operation - %@", [[Global sharedManager] getOperationTypeDescrytion:operationType]] view:self.view];
-           [self.navigationController popViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
         }
         
         else {
@@ -167,7 +172,7 @@
                     [Global showAlert:@"Alert" description:[NSString stringWithFormat:@"Process request:%@", [[Global sharedManager] getOperationTypeDescrytion:operationType]] view:self.view];
                     [self registerCards:vDecrypted];
                     break;
-                
+                    
                 case OT2_PAYWITHCARD:
                     [self processPayWithCard:vDecrypted];
                     break;
@@ -180,9 +185,6 @@
         }
         
     }
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//        [self.capture start];
-//    });
 }
 
 - (void) processPayWithCard:(NSString *) result {
@@ -193,7 +195,6 @@
 }
 
 - (IBAction) goCancel:(id)sender {
-    [self.capture stop];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -263,11 +264,11 @@
                 }];
             }
             else {
-                [self.navigationController popViewControllerAnimated:YES];
+                [self performSelector:@selector(goMobileCard)];
             }
         }
         else {
-            [self.navigationController popViewControllerAnimated:YES];
+            [self performSelector:@selector(goMobileCard)];
         }
         
         

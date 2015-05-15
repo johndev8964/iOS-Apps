@@ -21,5 +21,6 @@
 - (IBAction) goSignOut:(id)sender;
 - (IBAction) goAddCard:(id)sender;
 - (IBAction) goAbout:(id)sender;
+- (IBAction) goDelete:(id)sender;
 
 @end
