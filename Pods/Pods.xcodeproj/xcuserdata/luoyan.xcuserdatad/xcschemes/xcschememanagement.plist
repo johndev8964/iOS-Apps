@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CashAssistMobileCard-IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CashAssistMobileCard-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>056A110640A5692D7EA92EA4</key>
+		<key>15A72E5281191F86C4005277</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>264F8B5D0688DF4953FFF9D4</key>
+		<key>6DC1417D05DCBC5D39E8F42C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4147598C3A235377ED7EBA69</key>
+		<key>AF8004551E62274CBDA5CDE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A03DB2F1C3AF3EA33E0A852</key>
+		<key>BB7B3788E87F9D2BD9C9E815</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BE8069BB5954836FF9848F0</key>
+		<key>CA74619F0DBD9798BE4DC90C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6AA9E621DBE1E1132F7886E1</key>
+		<key>CB8DBE82B989F4201E561D80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7278E5C7BC1CA3665E18EEFE</key>
+		<key>D8BA6626C0DA186E3209F775</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DAEDA7E5D63BFD86F959AAE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

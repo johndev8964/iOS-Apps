@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "056A110640A5692D7EA92EA4"
+               BlueprintIdentifier = "15A72E5281191F86C4005277"
                BuildableName = "libPods-CashAssistMobileCard-MBProgressHUD.a"
                BlueprintName = "Pods-CashAssistMobileCard-MBProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">

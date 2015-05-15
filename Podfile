@@ -11,6 +11,7 @@ pod 'AFNetworking', '~> 1.3.3'
 pod 'ZXingObjC'
 pod 'CocoaSecurity'
 pod 'Toast', '~> 2.4'
+pod 'IQKeyboardManager'
 
 post_install do |installer_representation|
     installer_representation.project.targets.each do |target|

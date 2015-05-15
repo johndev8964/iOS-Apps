@@ -8,6 +8,7 @@
 
 #import "AccountInfoViewController.h"
 #import "AddCardViewController.h"
+#import "FirstViewController.h"
 #import "AboutViewController.h"
 #import "Global.h"
 #import "UIColor+HexString.h"
@@ -62,25 +63,29 @@
 }
 
 - (IBAction) goSignOut:(id)sender {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs removeObjectForKey:USER_ID];
-    
-    signoutConfirmAlertView = [[UIAlertView alloc] initWithTitle:@"Confirm" message:@"Are you sure you want to sign out?" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    signoutConfirmAlertView = [[UIAlertView alloc] initWithTitle:@"Confirm" message:@"Are you sure you want to sign out?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     [signoutConfirmAlertView show];
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            [self clearDefaultsData];
-            [signoutConfirmAlertView dismissWithClickedButtonIndex:0 animated:YES];
             break;
         case 1:
-            [signoutConfirmAlertView dismissWithClickedButtonIndex:1 animated:YES];
+            [self clearDefaultsData];
+            [signoutConfirmAlertView dismissWithClickedButtonIndex:0 animated:YES];
+            [self goSignin];
+
             break;
         default:
             break;
     }
+}
+
+- (void) goSignin {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FirstViewController *firstViewCtrl = [mainStoryboard instantiateViewControllerWithIdentifier:@"FirstView"];
+    [Global pageFlip:self to:firstViewCtrl];
 }
 
 - (void) clearDefaultsData {

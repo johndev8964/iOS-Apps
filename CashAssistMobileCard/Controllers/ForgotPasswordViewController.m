@@ -7,6 +7,7 @@
 //
 
 #import "ForgotPasswordViewController.h"
+#import "VerificationConfirmViewController.h"
 #import "UIColor+HexString.h"
 #import "Constants.h"
 #import "Global.h"
@@ -51,7 +52,7 @@
     
     NSString *udid = [[Global sharedManager] getNewUDID];
     [SVProgressHUD showWithStatus:@"Resending confirmation email..." maskType:SVProgressHUDMaskTypeClear];
-    [[APIService sharedManager] forgotPassword:udid email:@"" onCompletion:^(NSString *result, NSError *error) {
+    [[APIService sharedManager] forgotPassword:udid email:emailText.text onCompletion:^(NSString *result, NSError *error) {
         [SVProgressHUD dismiss];
         if (error)
         {
@@ -63,9 +64,9 @@
             
             int errorCode = [[Global httpResponseParser:C_REQUEST_ERRORCODE result:result] intValue];
             if (errorCode == 0) {
-//                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//                VerificationConfirmViewController *verficationConfirmViewCtrl = [mainStoryboard instantiateViewControllerWithIdentifier:@"VerificationConfirmView"];
-//                [Global pageFlip:self to:verficationConfirmViewCtrl];
+                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                VerificationConfirmViewController *verficationConfirmViewCtrl = [mainStoryboard instantiateViewControllerWithIdentifier:@"VerificationConfirmView"];
+                [Global pageFlip:self to:verficationConfirmViewCtrl];
             }
             else {
                 [errorLabel setText:[Global httpResponseParser:C_REQUEST_ERRORTEXT result:result]];
